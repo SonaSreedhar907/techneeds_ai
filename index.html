@@ -1627,7 +1627,8 @@
         tags: ['Voice AI', 'WhatsApp Bot', 'EHR/CRM Sync', 'HIPAA-Ready'],
         image: 'appointment.png',
         // image: 'Zmd030SS0W7HYC4rxnDdoFo0bE.jpg',
-        link: 'doctor.html'
+        link: 'doctor.html',
+        visibleIn: ['global', 'ae', 'gb', 'us']
       },
       {
         num: '02', icon: '✂️',
@@ -1635,7 +1636,8 @@
         desc: 'Every chair filled. Every slot optimized. Our salon AI auto-books, confirms & sends smart reminders — cutting no-shows by 35% and freeing your team to deliver 5-star service instead of answering phones.',
         tags: ['Auto Booking', 'Smart Reminders', 'No-Show Recovery', 'Multi-Channel'],
         image: 'salon.png',
-        link: 'salon.html'
+        link: 'salon.html',
+        visibleIn: ['global', 'gb', 'us']
       },
       {
         num: '03', icon: '💳',
@@ -1643,7 +1645,8 @@
         desc: "Stop writing off overdue invoices. Our AI sends perfectly-timed, personalised payment follow-ups via WhatsApp & email — recovering revenue you've already earned, on complete autopilot.",
         tags: ['WhatsApp Follow-up', 'Email Sequences', 'Smart Retry', 'Analytics'],
         image: 'payment.png',
-        link: 'payment.html'
+        link: 'payment.html',
+        visibleIn: ['global', 'ae', 'gb', 'us']
       },
       {
         num: '04', icon: '🎯',
@@ -1651,7 +1654,8 @@
         desc: "Every lead responded to in under 60 seconds. Scored, qualified, and routed to the right closer instantly. No more cold leads, no more missed opportunities — just a pipeline that converts.",
         tags: ['60-Second Response', 'AI Lead Scoring', 'CRM Auto-Push', 'Smart Routing'],
         image: 'lead.png',
-        link: 'lead.html'
+        link: 'lead.html',
+        visibleIn: ['global', 'ae', 'gb', 'us']
       },
     ];
 
@@ -1704,7 +1708,11 @@
     }
 
     function renderServices() {
-      document.getElementById('servicesGrid').innerHTML = SERVICES.map((s, i) =>
+      const visibleServices = SERVICES.filter(s =>
+        s.visibleIn && s.visibleIn.includes(currentCountry)
+      );
+
+      document.getElementById('servicesGrid').innerHTML = visibleServices.map((s, i) =>
         `<article class="scard glass-card reveal ${i > 0 ? 'd' + i : ''}" style="border-radius: inherit;" itemscope itemtype="https://schema.org/Service">
           <img src="${s.image}" alt="${s.name} - TechNeedsAI AI automation service" class="scard-img" loading="lazy" width="700" height="230"/>
           <div class="scard-num">${s.num}</div>
@@ -1845,22 +1853,56 @@
       }
 
       renderContactInfo();
+      renderServices();
+      initReveal();
       renderCountryDropdown();
     }
 
     function switchCountry(code) {
       localStorage.setItem('tnai_country', code);
+      localStorage.setItem('tnai_country_explicit', '1');
       applyCountry(code);
       document.getElementById('csDropdown').classList.remove('open');
     }
 
+    function detectCountryFromNavigator() {
+      const lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+      const tz = Intl.DateTimeFormat?.().resolvedOptions?.().timeZone || '';
+
+      if (lang.startsWith('ar') || tz.includes('Dubai') || tz.includes('Asia/Dubai')) return 'ae';
+      if (lang.startsWith('en-gb') || tz.includes('London') || tz.includes('Europe/London')) return 'gb';
+      if (lang.startsWith('en-us') || tz.startsWith('America/')) return 'us';
+      return 'global';
+    }
+
+    function getSavedCountry() {
+      return {
+        value: localStorage.getItem('tnai_country'),
+        explicit: localStorage.getItem('tnai_country_explicit') === '1'
+      };
+    }
+
     function detectCountry() {
-      const saved = localStorage.getItem('tnai_country');
-      if (saved && COUNTRIES[saved]) { applyCountry(saved); return; }
+      const saved = getSavedCountry();
+      if (saved.explicit && saved.value && COUNTRIES[saved.value]) {
+        applyCountry(saved.value);
+        return;
+      }
+
       fetch('https://ipapi.co/json/')
         .then(r => r.json())
-        .then(data => { const code = COUNTRY_MAP[data.country_code] || 'global'; applyCountry(code); })
-        .catch(() => applyCountry('global'));
+        .then(data => {
+          const code = COUNTRY_MAP[(data.country_code || '').toUpperCase()] || detectCountryFromNavigator();
+          localStorage.setItem('tnai_country', code);
+          localStorage.setItem('tnai_country_explicit', '0');
+          applyCountry(code);
+        })
+        .catch(() => {
+          const code = detectCountryFromNavigator();
+          localStorage.setItem('tnai_country', code);
+          localStorage.setItem('tnai_country_explicit', '0');
+          applyCountry(code);
+        });
     }
 
     // ============================================
