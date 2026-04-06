@@ -1054,7 +1054,7 @@
        ============================================ */
     .wa-btn {
       position: fixed; bottom: 30px; right: 30px; z-index: 800;
-      display: none; /* shown via JS for UAE */
+      display: none;
       align-items: center; gap: 10px;
       background: #25d366;
       padding: 14px 22px;
@@ -1104,7 +1104,6 @@
       .foot-inner { flex-direction: column; align-items: flex-start; }
       .form-row { grid-template-columns: 1fr; }
 
-      /* Mobile menu overlay */
       .nav-links.mobile-open {
         display: flex !important;
         flex-direction: column;
@@ -1133,11 +1132,9 @@
 </head>
 
 <body>
-  <!-- ============================================
-       NAVBAR
-       ============================================ -->
+  <!-- NAVBAR -->
   <nav class="navbar-custom" id="mainNav">
-    <a href="#" class="logo">
+    <a href="index.html" class="logo">
       <svg viewBox="0 0 44 44" fill="none">
         <rect x="4" y="6" width="5" height="32" rx="2" fill="#cc0000"/>
         <rect x="4" y="6" width="14" height="5" rx="2" fill="#cc0000"/>
@@ -1181,9 +1178,7 @@
     </ul>
   </nav>
 
-  <!-- ============================================
-       HERO
-       ============================================ -->
+  <!-- HERO -->
   <section class="hero" id="hero" aria-label="AI Business Automation Hero">
     <div class="hero-video-bg">
       <video autoplay muted loop playsinline aria-hidden="true">
@@ -1244,10 +1239,10 @@
       </div>
 
       <div class="hero-right hide-mobile" aria-hidden="true">
-        <div class="hphoto hphoto-main"><img src="8z52mVQtlpeHOeJtH1HDY14JXyk.jpg" alt="AI-powered business automation team helping clinics and salons automate appointments" loading="lazy" width="280" height="360"/></div>
-        <div class="hphoto hphoto-side"><img src="Zmd030SS0W7HYC4rxnDdoFo0bE.jpg" alt="AI voice agent technology for automated appointment booking" loading="lazy" width="200" height="260"/></div>
-        <div class="hphoto hphoto-bot"><img src="7HjVRPzSOt8xK3qWaVOvQSU83M.jpg" alt="Small business growth through AI-powered lead qualification" loading="lazy" width="230" height="180"/></div>
-        <div class="hcard glass">
+        <div class="hphoto hphoto-main"><img src="8z52mVQtlpeHOeJtH1HDY14JXyk.jpg" alt="AI-powered business automation team" loading="lazy" width="280" height="360"/></div>
+        <div class="hphoto hphoto-side"><img src="Zmd030SS0W7HYC4rxnDdoFo0bE.jpg" alt="AI voice agent technology" loading="lazy" width="200" height="260"/></div>
+        <div class="hphoto hphoto-bot"><img src="7HjVRPzSOt8xK3qWaVOvQSU83M.jpg" alt="Small business growth through AI" loading="lazy" width="230" height="180"/></div>
+        <div class="hcard glass hcard-live">
           <div class="hcard-live-dot">AI Active Now</div>
           <div class="hcard-title">247 bookings this month</div>
           <div class="hcard-sub">Handled 100% by AI</div>
@@ -1260,16 +1255,12 @@
     </div>
   </section>
 
-  <!-- ============================================
-       MARQUEE
-       ============================================ -->
+  <!-- MARQUEE -->
   <div class="marquee-wrap">
     <div class="marquee-track" id="marqueeTrack"></div>
   </div>
 
-  <!-- ============================================
-       SERVICES
-       ============================================ -->
+  <!-- SERVICES -->
   <div class="services-bg" id="services">
     <div class="section-wrap">
       <div class="services-header reveal">
@@ -1283,16 +1274,12 @@
     </div>
   </div>
 
-  <!-- ============================================
-       STATS
-       ============================================ -->
+  <!-- STATS -->
   <div class="stats-bar">
     <div class="stats-grid" id="statsGrid"></div>
   </div>
 
-  <!-- ============================================
-       PROCESS
-       ============================================ -->
+  <!-- PROCESS -->
   <div class="process-bg" id="process">
     <div class="section-wrap">
       <div class="process-inner">
@@ -1306,9 +1293,7 @@
     </div>
   </div>
 
-  <!-- ============================================
-       TESTIMONIALS
-       ============================================ -->
+  <!-- TESTIMONIALS -->
   <div class="testi-bg" id="testimonials">
     <div class="section-wrap">
       <div class="reveal">
@@ -1319,9 +1304,7 @@
     </div>
   </div>
 
-  <!-- ============================================
-       DEMO TEASER
-       ============================================ -->
+  <!-- DEMO TEASER -->
   <div class="demo-bg" id="demos">
     <div class="section-wrap" style="text-align:center">
       <div class="section-tag reveal" style="justify-content:center">Interactive AI Demos</div>
@@ -1331,9 +1314,7 @@
     </div>
   </div>
 
-  <!-- ============================================
-       ABOUT
-       ============================================ -->
+  <!-- ABOUT -->
   <div class="about-bg" id="about">
     <div class="section-wrap">
       <div class="about-inner">
@@ -1362,9 +1343,7 @@
     </div>
   </div>
 
-  <!-- ============================================
-       CTA
-       ============================================ -->
+  <!-- CTA -->
   <div class="cta-bg">
     <div class="section-wrap">
       <div class="cta-glow"></div>
@@ -1380,9 +1359,7 @@
     </div>
   </div>
 
-  <!-- ============================================
-       CONTACT
-       ============================================ -->
+  <!-- CONTACT -->
   <div class="contact-bg" id="contact">
     <div class="section-wrap">
       <div class="reveal">
@@ -1440,9 +1417,7 @@
     </div>
   </div>
 
-  <!-- ============================================
-       FOOTER
-       ============================================ -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="foot-inner">
       <div class="foot-copy">&copy; 2026 TechNeedsAI. All rights reserved. Built for small businesses worldwide.</div>
@@ -1457,9 +1432,7 @@
     </div>
   </footer>
 
-  <!-- ============================================
-       WHATSAPP BUTTON (UAE only)
-       ============================================ -->
+  <!-- WHATSAPP BUTTON -->
   <a href="#" target="_blank" rel="noopener noreferrer" class="wa-btn" id="waBtn" title="Chat on WhatsApp">
     <svg viewBox="0 0 24 24" fill="white" width="26" height="26">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
@@ -1468,12 +1441,11 @@
     <span class="wa-ping"></span>
   </a>
 
-  <!-- Bootstrap JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
 
   <script>
     // ============================================
-    // COUNTRY DATA (mirrors GeoContext.jsx)
+    // COUNTRY DATA
     // ============================================
     const COUNTRIES = {
       global: {
@@ -1526,13 +1498,41 @@
     let currentCountry = 'global';
 
     // ============================================
-    // SERVICES DATA
+    // SERVICES DATA — link added to each entry
     // ============================================
     const SERVICES = [
-      { num: '01', icon: '🏥', name: 'AI Doctor Appointment Booking', desc: 'Zero missed patients. Zero front-desk bottlenecks. Our AI handles appointment scheduling, automated reminders, and intelligent rescheduling via WhatsApp, voice calls & web — 24/7, so your clinic runs at full capacity.', tags: ['Voice AI', 'WhatsApp Bot', 'EHR/CRM Sync', 'HIPAA-Ready'], image: 'Zmd030SS0W7HYC4rxnDdoFo0bE.jpg' },
-      { num: '02', icon: '✂️', name: 'AI Salon & Spa Booking', desc: 'Every chair filled. Every slot optimized. Our salon AI auto-books, confirms & sends smart reminders — cutting no-shows by 35% and freeing your team to deliver 5-star service instead of answering phones.', tags: ['Auto Booking', 'Smart Reminders', 'No-Show Recovery', 'Multi-Channel'], image: '9TZLUQu0KtEMZEo09Dp7aG0uwlA.jpg' },
-      { num: '03', icon: '💳', name: 'AI Payment Recovery', desc: "Stop writing off overdue invoices. Our AI sends perfectly-timed, personalised payment follow-ups via WhatsApp & email — recovering revenue you've already earned, on complete autopilot.", tags: ['WhatsApp Follow-up', 'Email Sequences', 'Smart Retry', 'Analytics'], image: '6jfEroq9IBw6ngfAiDZbeabTiqg.jpg' },
-      { num: '04', icon: '🎯', name: 'AI Lead Qualification & Routing', desc: "Every lead responded to in under 60 seconds. Scored, qualified, and routed to the right closer instantly. No more cold leads, no more missed opportunities — just a pipeline that converts.", tags: ['60-Second Response', 'AI Lead Scoring', 'CRM Auto-Push', 'Smart Routing'], image: 'rHxU63GZz8B1cpBP4SIK9xYwM.jpg' },
+      {
+        num: '01', icon: '🏥',
+        name: 'AI Doctor Appointment Booking',
+        desc: 'Zero missed patients. Zero front-desk bottlenecks. Our AI handles appointment scheduling, automated reminders, and intelligent rescheduling via WhatsApp, voice calls & web — 24/7, so your clinic runs at full capacity.',
+        tags: ['Voice AI', 'WhatsApp Bot', 'EHR/CRM Sync', 'HIPAA-Ready'],
+        image: 'Zmd030SS0W7HYC4rxnDdoFo0bE.jpg',
+        link: 'doctor.html'
+      },
+      {
+        num: '02', icon: '✂️',
+        name: 'AI Salon & Spa Booking',
+        desc: 'Every chair filled. Every slot optimized. Our salon AI auto-books, confirms & sends smart reminders — cutting no-shows by 35% and freeing your team to deliver 5-star service instead of answering phones.',
+        tags: ['Auto Booking', 'Smart Reminders', 'No-Show Recovery', 'Multi-Channel'],
+        image: '9TZLUQu0KtEMZEo09Dp7aG0uwlA.jpg',
+        link: 'salon.html'
+      },
+      {
+        num: '03', icon: '💳',
+        name: 'AI Payment Recovery',
+        desc: "Stop writing off overdue invoices. Our AI sends perfectly-timed, personalised payment follow-ups via WhatsApp & email — recovering revenue you've already earned, on complete autopilot.",
+        tags: ['WhatsApp Follow-up', 'Email Sequences', 'Smart Retry', 'Analytics'],
+        image: '6jfEroq9IBw6ngfAiDZbeabTiqg.jpg',
+        link: 'payment.html'
+      },
+      {
+        num: '04', icon: '🎯',
+        name: 'AI Lead Qualification & Routing',
+        desc: "Every lead responded to in under 60 seconds. Scored, qualified, and routed to the right closer instantly. No more cold leads, no more missed opportunities — just a pipeline that converts.",
+        tags: ['60-Second Response', 'AI Lead Scoring', 'CRM Auto-Push', 'Smart Routing'],
+        image: 'rHxU63GZz8B1cpBP4SIK9xYwM.jpg',
+        link: 'lead.html'
+      },
     ];
 
     const STATS = [
@@ -1593,7 +1593,7 @@
             <h3 class="scard-name" itemprop="name">${s.name}</h3>
             <p class="scard-desc" itemprop="description">${s.desc}</p>
             <div class="scard-tags">${s.tags.map(t => `<span class="stag">${t}</span>`).join('')}</div>
-            <a href="#contact" class="scard-link" aria-label="Get started with ${s.name}">Get Started &rarr;</a>
+            <a href="${s.link}" class="scard-link" aria-label="Get started with ${s.name}">Get Started &rarr;</a>
           </div>
         </article>`
       ).join('');
@@ -1691,7 +1691,6 @@
     // ============================================
     // GEO & COUNTRY SWITCHING
     // ============================================
-
     function applyCountry(code) {
       currentCountry = code;
       const data = COUNTRIES[code];
@@ -1716,7 +1715,6 @@
         phoneEl.style.display = 'none';
       }
 
-      // WhatsApp button
       const waBtn = document.getElementById('waBtn');
       if (data.whatsapp) {
         const msg = encodeURIComponent("Hi TechNeedsAI! I'd like to learn more about your AI automation solutions.");
@@ -1738,23 +1736,16 @@
 
     function detectCountry() {
       const saved = localStorage.getItem('tnai_country');
-      if (saved && COUNTRIES[saved]) {
-        applyCountry(saved);
-        return;
-      }
+      if (saved && COUNTRIES[saved]) { applyCountry(saved); return; }
       fetch('https://ipapi.co/json/')
         .then(r => r.json())
-        .then(data => {
-          const code = COUNTRY_MAP[data.country_code] || 'global';
-          applyCountry(code);
-        })
+        .then(data => { const code = COUNTRY_MAP[data.country_code] || 'global'; applyCountry(code); })
         .catch(() => applyCountry('global'));
     }
 
     // ============================================
     // UI INTERACTIONS
     // ============================================
-
     function toggleCountryDropdown() {
       document.getElementById('csDropdown').classList.toggle('open');
     }
@@ -1766,19 +1757,16 @@
       icon.className = links.classList.contains('mobile-open') ? 'bi bi-x-lg' : 'bi bi-list';
     }
 
-    // Close dropdown on outside click
     document.addEventListener('click', function(e) {
       if (!e.target.closest('.cs-wrap')) {
         document.getElementById('csDropdown').classList.remove('open');
       }
     });
 
-    // Navbar scroll
     window.addEventListener('scroll', () => {
       document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 40);
     });
 
-    // Contact form
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const btn = this.querySelector('.fsubmit');
@@ -1792,7 +1780,6 @@
       }, 3000);
     });
 
-    // Close mobile menu on link click
     document.getElementById('navLinks').addEventListener('click', function(e) {
       if (e.target.tagName === 'A') {
         this.classList.remove('mobile-open');
@@ -1824,7 +1811,6 @@
       requestAnimationFrame(animRing);
     })();
 
-    // Hover effects on interactive elements
     function addCursorHover() {
       document.querySelectorAll('a,button,.scard,.tcard,.dcard,.pstep,.vitem').forEach(el => {
         el.addEventListener('mouseenter', () => { cursor.classList.add('hov'); ring.classList.add('hov'); });
@@ -1856,11 +1842,7 @@
       renderContactInfo();
       renderCountryDropdown();
       detectCountry();
-
-      setTimeout(() => {
-        initReveal();
-        addCursorHover();
-      }, 200);
+      setTimeout(() => { initReveal(); addCursorHover(); }, 200);
     });
   </script>
 </body>
